@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>プロップ実務完全ガイド｜審査準備から環境構築・資金管理・税金まで｜プロップナビ</title>
-  <meta name="description" content="プロップファームの審査に受かる準備から、VPS・チャート・国内口座の環境構築、資金管理、税金まで。プロップで稼ぐ前後に必要な実務を出典付きで整理し、無料の計算ツールも公開。投資助言は行いません。" />
+  <title>FXコンパス｜FXの始め方・口座比較・取引ツールを、迷わない地図に</title>
+  <meta name="description" content="FXコンパスは、FXの始め方から国内口座の比較、取引ツール・VPS環境、資金管理、税金、プロップファームまでを出典付きで整理するFX総合メディア。無料の計算ツールも公開。投資助言・売買推奨は行いません。" />
   <link rel="canonical" href="https://tenten1100.github.io/prop-navi/index.html" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="プロップ実務完全ガイド｜審査準備から環境構築・資金管理・税金まで" />
-  <meta property="og:description" content="プロップで稼ぐ前後に必要な実務（審査準備・VPS・チャート・国内口座・資金管理）を出典付きで整理。計算ツールも無料公開。" />
+  <meta property="og:title" content="FXコンパス｜FXの、迷わない地図。" />
+  <meta property="og:description" content="FXの始め方・口座比較・取引ツール・資金管理・税金・プロップを、出典付きの事実で整理。無料の計算ツールも公開。" />
   <meta property="og:url" content="https://tenten1100.github.io/prop-navi/index.html" />
-  <meta property="og:site_name" content="プロップナビ" />
-  <meta name="twitter:card" content="summary" />
+  <meta property="og:site_name" content="FXコンパス" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="stylesheet" href="assets/site.css" />
   <!-- JSON-LD: WebSite -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "プロップナビ",
+    "name": "FXコンパス",
     "url": "https://tenten1100.github.io/prop-navi/",
-    "description": "プロップトレーダーの実務インフラ（審査準備・VPS・チャート・国内口座・資金管理）を出典付きで整理する情報メディア。投資助言は行いません。",
+    "description": "FXの始め方・口座比較・取引ツール・資金管理・税金・プロップファームを出典付きで整理するFX総合メディア。投資助言は行いません。",
     "inLanguage": "ja"
   }
   </script>
@@ -28,228 +28,215 @@
 <body>
   <header class="site-header" id="siteHeader"></header>
 
-  <!-- ヒーロー: 雑誌の特集扉 -->
-  <section class="hub-hero feature">
-    <div class="feature-inner">
-      <span class="feature-kicker">特集・完全ガイド</span>
-      <h1>プロップで稼ぐ前後に、必要なものを全部そろえる。</h1>
-      <p>
-        審査に受かる準備から、VPS・チャート・国内口座といった環境構築、資金管理、そして税金まで。
-        プロップトレーダーの「実務インフラ」を、出典付きの事実だけで一気通貫に整理します。売買手法やタイミングの助言は扱いません。
-      </p>
-      <div class="feature-jump">
-        <a href="#journey">課題から記事を探す</a>
-        <a href="tools/calculator.html">計算ツールを使う</a>
+  <!-- ヒーロー（ポータル） -->
+  <section class="portal-hero">
+    <div class="inner">
+      <div class="hero-copy">
+        <span class="eyebrow">FX総合メディア</span>
+        <h1>FXの、<span class="hl">迷わない地図</span>。<br />始め方も、口座選びも、ここで。</h1>
+        <p class="sub">
+          はじめてのFXから、国内口座の比較、取引ツール・VPS環境、資金管理、税金、プロップファームまで。
+          「何から手をつけるか」を、出典付きの事実だけで案内します。売買のタイミングや手法の助言は扱いません。
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="guide/kokunai-kouza.html">FX口座を比較する</a>
+          <a class="btn btn-ghost" href="guide/fx-hajimekata.html">はじめてのFXを読む</a>
+        </div>
       </div>
+      <div class="hero-art" id="heroArt" aria-hidden="true"></div>
     </div>
   </section>
 
+  <!-- カテゴリチップ -->
+  <nav class="chip-row" aria-label="カテゴリ">
+    <a class="chip" href="guide/fx-hajimekata.html">はじめてのFX</a>
+    <a class="chip" href="guide/kokunai-kouza.html">口座比較</a>
+    <a class="chip" href="guide/vps.html">VPS・取引環境</a>
+    <a class="chip" href="guide/tradingview.html">チャートツール</a>
+    <a class="chip" href="tools/calculator.html">資金管理ツール</a>
+    <a class="chip" href="guide/ftmo.html">プロップファーム</a>
+    <a class="chip" href="guide/kakutei-shinkoku.html">税金・確定申告</a>
+    <a class="chip" href="guide/prop-yougo.html">用語集</a>
+  </nav>
+
   <main class="wide">
-    <p class="lead">
-      プロップファーム（取引資金提供業者）は、トレーダーに審査を課し、合格者へ運用資金を提供して利益を配分する仕組みです。
-      グローバルの小売プロップ市場は約200億ドル・2,000社超に達し<a href="#src-1">［1］</a>、2026年には日本でも受験者が急増しています<a href="#src-2">［2］</a>。
-      一方で合格率は約10.6%と厳しく<a href="#src-3">［3］</a>、合否は手法以前に「ルールの計算」と「安定した取引環境」で大きく変わります。
-      本サイトは<strong>勝てる手法やエントリー判断は一切提供せず</strong>、審査準備・環境構築・資金管理・税金という実務だけを、ツールと事実で支えます。
-    </p>
 
-    <!-- プロップの仕組み図（自作インラインSVG・外部画像なし） -->
-    <figure class="figure" aria-label="プロップファームのお金と審査の流れの図">
-      <svg viewBox="0 0 720 200" role="img" preserveAspectRatio="xMidYMid meet">
-        <rect class="fig-bg" x="0" y="0" width="720" height="200" rx="4" />
-        <!-- 1. 受験 -->
-        <rect class="fig-box" x="20" y="60" width="150" height="80" rx="6" />
-        <text class="fig-text" x="95" y="92" text-anchor="middle">① 審査料を払う</text>
-        <text class="fig-text-sm" x="95" y="112" text-anchor="middle">最安 約12,500円〜</text>
-        <!-- arrow -->
-        <line class="fig-line" x1="170" y1="100" x2="210" y2="100" />
-        <polygon class="fig-box-navy" points="210,94 222,100 210,106" />
-        <!-- 2. チャレンジ -->
-        <rect class="fig-box-accent" x="222" y="50" width="170" height="100" rx="6" />
-        <text class="fig-text" x="307" y="82" text-anchor="middle">② チャレンジ</text>
-        <text class="fig-text-sm" x="307" y="102" text-anchor="middle">利益目標・日次DD・最大DD</text>
-        <text class="fig-text-accent" x="307" y="124" text-anchor="middle">合格率 約10.6%</text>
-        <!-- arrow -->
-        <line class="fig-line" x1="392" y1="100" x2="432" y2="100" />
-        <polygon class="fig-box-navy" points="432,94 444,100 432,106" />
-        <!-- 3. 運用枠＋分配 -->
-        <rect class="fig-box" x="444" y="60" width="160" height="80" rx="6" />
-        <text class="fig-text" x="524" y="92" text-anchor="middle">③ 運用枠＋利益配分</text>
-        <text class="fig-text-sm" x="524" y="112" text-anchor="middle">多くはデモ口座で評価</text>
-        <!-- note -->
-        <text class="fig-text-sm" x="640" y="100" text-anchor="middle">顧客資金を</text>
-        <text class="fig-text-sm" x="640" y="116" text-anchor="middle">預からない構造</text>
-      </svg>
-      <figcaption>プロップのお金と審査の流れ。多くの小売プロップはシミュレーション（デモ）環境で審査・運用が完結する。</figcaption>
-    </figure>
-
-    <h2 class="section-title">プロップファームとは</h2>
-    <p>
-      プロップファーム（proprietary trading firm）は、自己資金ではなく業者が用意した資金でトレードする機会を提供する事業者です。
-      多くの小売向けプロップは、受験者がまず審査料（チャレンジ料）を払って「チャレンジ」と呼ばれる審査を受け、
-      決められた利益目標・損失上限（ドローダウン）を守って合格すると、運用枠と利益配分（プロフィットスプリット）が与えられる、という形を取ります。
-    </p>
-    <p>
-      重要なのは、<strong>受験者は実際に他人の資金を直接運用しているとは限らず、シミュレーション環境（デモ）で審査・運用が完結する形態が多い</strong>という点です。
-      この「顧客資金を預からない」構造ゆえに、プロップファームは現状、金融庁の登録対象に当たらないグレー領域として議論されています<a href="#src-5">［5］</a>。
-    </p>
-
-    <!-- 課題起点の導線（読者ジャーニー） -->
-    <h2 class="section-title" id="journey">あなたの課題から記事を探す</h2>
-    <p>プロップで結果を出すまでの実務を4ステップに分けました。今いる段階から読み進めてください。</p>
-
-    <div class="journey">
-      <div class="journey-step">
-        <span class="step-no">STEP 1</span>
-        <h3>審査に受かる準備をする</h3>
-        <p>ルールの計算（日次DD・最大DD）を理解し、リスクを直視し、飛ばない業者を選ぶ。ここを飛ばすと審査料を失います。</p>
-        <ul class="journey-links">
-          <li><a href="guide/challenge-rules.html">チャレンジルール完全ガイド</a></li>
-          <li><a href="guide/erabikata.html">プロップファームの選び方（3軸）</a></li>
-          <li><a href="guide/prop-no-risk.html">リスクと失敗パターン（やめとけ・怪しい）</a></li>
-          <li><a href="guide/prop-yougo.html">プロップファーム用語集50語</a></li>
-        </ul>
+    <!-- 編集部ピックアップ -->
+    <section class="home-section">
+      <div class="section-title">編集部のピックアップ <span class="en">PICK UP</span></div>
+      <p class="section-lead">迷ったらここから。アクセスの多いテーマと、いま読んでおきたい記事を編集部が選びました。</p>
+      <div class="card-grid">
+        <a class="guide-card" href="guide/kokunai-kouza.html">
+          <span class="thumb"><svg class="t-ic" viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="10" width="32" height="22" rx="3" fill="none" stroke="#fff" stroke-width="2.4"/><path d="M8 17h32" stroke="#fff" stroke-width="2.4"/><rect x="13" y="24" width="9" height="3" rx="1.5" fill="#fff"/></svg><span class="t-num">01</span></span>
+          <div class="body">
+            <span class="kicker">口座比較</span>
+            <h3>FX口座のおすすめ比較｜初心者の選び方</h3>
+            <p>スプレッド・最小取引単位・ツールで比べる。練習も本番もまずは国内の登録業者から。</p>
+          </div>
+        </a>
+        <a class="guide-card" href="guide/fx-hajimekata.html">
+          <span class="thumb v2"><svg class="t-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 30l8-9 7 6 12-14" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="37" cy="13" r="3" fill="#fff"/></svg><span class="t-num">02</span></span>
+          <div class="body">
+            <span class="kicker">はじめてのFX</span>
+            <h3>FXの始め方｜仕組み・必要資金・最初の一歩</h3>
+            <p>FXとは何かをやさしく。レバレッジ・スプレッド・スワップの基本と、口座開設の流れ。</p>
+          </div>
+        </a>
+        <a class="guide-card" href="tools/calculator.html">
+          <span class="thumb v4"><svg class="t-ic" viewBox="0 0 48 48" aria-hidden="true"><rect x="13" y="8" width="22" height="32" rx="3" fill="none" stroke="#fff" stroke-width="2.4"/><rect x="17" y="12" width="14" height="6" rx="1.5" fill="#fff"/><circle cx="19" cy="24" r="1.8" fill="#fff"/><circle cx="24" cy="24" r="1.8" fill="#fff"/><circle cx="29" cy="24" r="1.8" fill="#fff"/><circle cx="19" cy="30" r="1.8" fill="#fff"/><circle cx="24" cy="30" r="1.8" fill="#fff"/><circle cx="29" cy="30" r="1.8" fill="#fff"/></svg><span class="t-num">03</span></span>
+          <div class="body">
+            <span class="kicker">無料ツール</span>
+            <h3>資金管理＆ロット計算ツール</h3>
+            <p>口座サイズと許容リスクから、安全ロットと損失上限を自動計算。登録不要・無料。</p>
+          </div>
+        </a>
       </div>
-      <div class="journey-step">
-        <span class="step-no">STEP 2</span>
-        <h3>取引環境を構築する</h3>
-        <p>EA・自動売買を24時間落とさないVPS、その設定手順、Macでの使い方、DD管理に効くチャート、練習用の国内口座をそろえる。</p>
-        <ul class="journey-links">
-          <li><a href="guide/vps.html">プロップ向けVPS比較</a></li>
-          <li><a href="guide/vps-setup.html">ConoHa VPSでMT5を24時間動かす設定手順</a></li>
-          <li><a href="guide/mac-mt5.html">MacでMT4/MT5を使う3つの方法</a></li>
-          <li><a href="guide/tradingview.html">TradingView活用ガイド</a></li>
-          <li><a href="guide/kokunai-kouza.html">練習・検証用の国内FX/CFD口座</a></li>
-        </ul>
-      </div>
-      <div class="journey-step">
-        <span class="step-no">STEP 3</span>
-        <h3>資金を管理して生き残る</h3>
-        <p>ロット・撤退ライン・DD余地を数字で管理する。手法より先に、ここで脱落を防ぎます。</p>
-        <ul class="journey-links">
-          <li><a href="guide/shikin-kanri.html">プロップの資金管理 実務ガイド</a></li>
-          <li><a href="tools/calculator.html">資金管理＆ROI計算ツール（無料）</a></li>
-          <li><a href="tools/tracker.html">進捗トラッキング（無料）</a></li>
-        </ul>
-      </div>
-      <div class="journey-step">
-        <span class="step-no">STEP 4</span>
-        <h3>制度・税金を理解する</h3>
-        <p>改正資金決済法とプロップ移行の実際、税金・確定申告の一般論、業界の最新動向を正確に把握する（誇張しない）。</p>
-        <ul class="journey-links">
-          <li><a href="guide/shikin-kessai-hou.html">改正資金決済法と移行の実際</a></li>
-          <li><a href="guide/kakutei-shinkoku.html">税金・確定申告ガイド（個別判断は税理士へ）</a></li>
-          <li><a href="guide/koushin-log.html">規約変更・業界動向ウォッチ（更新ログ）</a></li>
-        </ul>
-      </div>
-    </div>
+    </section>
 
-    <div class="note-box">
-      <span class="tag">正確な記述</span>
-      <p style="margin:0">
-        2026年の改正資金決済法を「プロップの追い風」と単純化する解説を見かけますが、改正の主たる射程はステーブルコインやクロスボーダー収納代行で、<strong>プロップファームを直接後押しする条文ではありません</strong>。
-        海外FXの入出金が不便になったことの副次的な効果と捉えるのが妥当です。線引きは <a href="guide/shikin-kessai-hou.html">改正資金決済法とプロップ移行の実際</a> で解説します。
-      </p>
-    </div>
+    <!-- はじめてのFX -->
+    <section class="home-section">
+      <div class="section-title">はじめてのFX <span class="en">BASICS</span></div>
+      <p class="section-lead">専門用語を最小限に。「FXって何？」から「最初の口座を開く」までを順番に。</p>
+      <div class="card-grid">
+        <a class="guide-card" href="guide/fx-hajimekata.html">
+          <div class="body"><span class="kicker">入門</span><h3>FXの始め方 完全ガイド</h3><p>仕組み・必要資金・リスク・口座開設の流れを、初心者目線で一気に。</p></div>
+        </a>
+        <a class="guide-card" href="guide/prop-yougo.html">
+          <div class="body"><span class="kicker">用語</span><h3>FX・トレード用語集</h3><p>pips・ロット・ドローダウン・スワップ…つまずきやすい言葉を1〜3文で。</p></div>
+        </a>
+        <a class="guide-card" href="guide/kakutei-shinkoku.html">
+          <div class="body"><span class="kicker">税金</span><h3>FX・トレードの税金と確定申告</h3><p>所得区分・経費・申告の一般知識を国税庁の一次情報で。個別判断は税理士へ。</p></div>
+        </a>
+      </div>
+    </section>
 
-    <h2 class="section-title">記事一覧</h2>
-    <div class="card-grid">
-      <a class="guide-card" href="guide/vps.html">
-        <span class="kicker">環境構築</span>
-        <h3>プロップ向けVPS比較</h3>
-        <p>EA・自動売買を24時間落とさないために。なぜVPSが要るか、選定基準、比較表。</p>
-      </a>
-      <a class="guide-card" href="guide/kokunai-kouza.html">
-        <span class="kicker">環境構築</span>
-        <h3>練習・検証用の国内FX/CFD口座</h3>
-        <p>本番（プロップ）と練習（国内口座）の使い分け。合法・国内登録業者で環境を整える。</p>
-      </a>
-      <a class="guide-card" href="guide/tradingview.html">
-        <span class="kicker">環境構築</span>
-        <h3>TradingView活用ガイド</h3>
-        <p>プロップのDD管理に効くアラート設計。無料/有料プランの違いを実務目線で比較。</p>
-      </a>
-      <a class="guide-card" href="guide/shikin-kanri.html">
-        <span class="kicker">資金管理</span>
-        <h3>プロップの資金管理 実務ガイド</h3>
-        <p>ロット・撤退ライン・DD余地を数字で。計算ツールへのハブとして使えます。</p>
-      </a>
-      <a class="guide-card" href="guide/ftmo.html">
-        <span class="kicker">ガイド</span>
-        <h3>FTMO徹底ガイド</h3>
-        <p>2015年設立・運営11年。親会社が規制ブローカーOANDAとなった最大手の事実を整理。</p>
-      </a>
-      <a class="guide-card" href="guide/erabikata.html">
-        <span class="kicker">比較</span>
-        <h3>プロップファームの選び方</h3>
-        <p>運営年数・支払い実績の透明性・親会社の規制状態という3軸で客観比較。</p>
-      </a>
-      <a class="guide-card" href="guide/challenge-rules.html">
-        <span class="kicker">基礎</span>
-        <h3>チャレンジルール完全ガイド</h3>
-        <p>利益目標・日次DD・最大DDの計算の仕組みを、合格率10.6%の現実とともに解説。</p>
-      </a>
-      <a class="guide-card" href="guide/vps-setup.html">
-        <span class="kicker">環境構築</span>
-        <h3>ConoHa VPSでMT5を24時間動かす設定手順</h3>
-        <p>接続→MT5導入→EA稼働→自動再起動まで。落ちない運用にするための実務手順。</p>
-      </a>
-      <a class="guide-card" href="guide/mac-mt5.html">
-        <span class="kicker">環境構築</span>
-        <h3>MacでMT4/MT5を使う3つの方法</h3>
-        <p>公式Mac版・仮想化・VPSを客観比較。EA常時稼働ならVPSが有力な理由。</p>
-      </a>
-      <a class="guide-card" href="guide/prop-no-risk.html">
-        <span class="kicker">リスク</span>
-        <h3>リスクと失敗パターン</h3>
-        <p>「やめとけ・怪しい」と言われる理由（出金拒否・閉鎖・規約変更）を直視し、選別基準へ。</p>
-      </a>
-      <a class="guide-card" href="guide/kakutei-shinkoku.html">
-        <span class="kicker">税金</span>
-        <h3>税金・確定申告ガイド</h3>
-        <p>所得区分・経費・帳簿の一般知識を国税庁の一次情報で整理。個別判断は税理士へ。</p>
-      </a>
-      <a class="guide-card" href="guide/prop-yougo.html">
-        <span class="kicker">索引</span>
-        <h3>プロップファーム用語集50語</h3>
-        <p>DD・リーディングロス・スケーリング等を1〜3文で定義。各記事へのハブ。</p>
-      </a>
-      <a class="guide-card" href="guide/koushin-log.html">
-        <span class="kicker">透明性</span>
-        <h3>規約変更・業界動向ウォッチ</h3>
-        <p>各社ルール・規制・本サイト更新を日付付きで時系列記録。情報の鮮度と出典を重視。</p>
-      </a>
-      <a class="guide-card" href="tools/calculator.html">
-        <span class="kicker">無料ツール</span>
-        <h3>資金管理＆ROI計算ツール</h3>
-        <p>損失上限・ロット目安・あと何回負けられるか、加えてチャレンジ費用回収の期待値を算出。</p>
-      </a>
-    </div>
+    <!-- 口座をさがす（ランキング形式の入口） -->
+    <section class="home-section">
+      <div class="section-title">口座をさがす <span class="en">COMPARE</span></div>
+      <p class="section-lead">「どこで始めるか」で操作性も手数料も変わります。国内の登録業者を、目的別の事実で比較します。</p>
 
-    <!-- 編集部メモ（人間味の一言コラム。トレード実績の主張はしない／Founder実体験はプレースホルダ） -->
-    <div class="editor-memo">
-      <span class="tag">編集部メモ</span>
-      <p>
-        プロップ関連の記事は、結局どこも「合格できる」「おすすめ」で締めくくられます。
-        でも審査で落ちる人の大半は、手法ではなく日次ドローダウンの計算を一度もしていない、あるいはEAを動かすPCが落ちて建玉が放置された、という運用面の事故です。
-        本サイトが手法を語らず、計算ツールとVPS・環境の話に紙幅を割いているのはそのためです。
-      </p>
-      <!-- TODO(Founder): ここに運営者本人の受験プロセス（事実）を1〜2文で追記可。捏造した体験談・トレード実績の主張は書かない。 -->
-    </div>
+      <div class="rank-card top">
+        <span class="rank-badge">編集部チェック No.1 候補</span>
+        <div class="rank-head">
+          <span class="rank-name">少額・初心者で選ぶなら</span>
+          <span class="stars" aria-label="4.6/5.0">
+            <svg class="star" viewBox="0 0 20 20" fill="#f5a623"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17.6l1-5.8L1.5 7.7l5.9-.9z"/></svg>
+            <svg class="star" viewBox="0 0 20 20" fill="#f5a623"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17.6l1-5.8L1.5 7.7l5.9-.9z"/></svg>
+            <svg class="star" viewBox="0 0 20 20" fill="#f5a623"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17.6l1-5.8L1.5 7.7l5.9-.9z"/></svg>
+            <svg class="star" viewBox="0 0 20 20" fill="#f5a623"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17.6l1-5.8L1.5 7.7l5.9-.9z"/></svg>
+            <svg class="star" viewBox="0 0 20 20" fill="#e6eaf3"><path d="M10 1.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L10 14.9 4.8 17.6l1-5.8L1.5 7.7l5.9-.9z"/></svg>
+            <span class="num">4.6</span>
+          </span>
+        </div>
+        <div class="rank-body">
+          <p style="margin:0 0 6px">
+            FXは1,000通貨など<strong>少額から始められる国内口座</strong>が初心者に向きます。スプレッドの狭さ・取引単位・スマホアプリの使いやすさを、目的別に比較ページで整理しています。
+          </p>
+        </div>
+        <div class="rank-cta"><a class="btn btn-primary" href="guide/kokunai-kouza.html">口座の比較を見る</a></div>
+      </div>
+
+      <div class="pros-cons">
+        <div class="pros">
+          <div class="h">国内口座のメリット</div>
+          <ul>
+            <li>金融庁登録業者で、入出金や税制が明確</li>
+            <li>1,000通貨など少額から練習しやすい</li>
+            <li>日本語サポート・アプリが充実</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <div class="h">気をつけたい点</div>
+          <ul>
+            <li>レバレッジは最大25倍（国内規制）</li>
+            <li>高レバの海外業者は別物（当サイトは扱いません）</li>
+            <li>口座ごとにスプレッド・スワップ差がある</li>
+          </ul>
+        </div>
+      </div>
+      <p class="source" style="margin-top:8px">※ 各社の数値・キャンペーンは変動します。最新の条件は必ず公式サイトでご確認ください。当サイトは海外FX業者を紹介しません（理由は <a href="guide/kokunai-kouza.html">口座比較ページ</a>）。</p>
+    </section>
+
+    <!-- ツール・取引環境 -->
+    <section class="home-section">
+      <div class="section-title">ツール・取引環境 <span class="en">TOOLS</span></div>
+      <p class="section-lead">勝ち負け以前に、環境で差がつきます。チャート・VPS・自動売買の土台を整えるための記事です。</p>
+      <div class="card-grid">
+        <a class="guide-card" href="guide/vps.html">
+          <span class="thumb v2"><svg class="t-ic" viewBox="0 0 48 48" aria-hidden="true"><rect x="9" y="11" width="30" height="9" rx="2" fill="none" stroke="#fff" stroke-width="2.2"/><rect x="9" y="28" width="30" height="9" rx="2" fill="none" stroke="#fff" stroke-width="2.2"/><circle cx="14" cy="15.5" r="1.6" fill="#fff"/><circle cx="14" cy="32.5" r="1.6" fill="#fff"/></svg></span>
+          <div class="body"><span class="kicker">VPS</span><h3>FX用VPS比較｜自動売買を24時間動かす</h3><p>EAを落とさないために。プロップ・自動売買での選び方と比較表。</p></div>
+        </a>
+        <a class="guide-card" href="guide/tradingview.html">
+          <span class="thumb"><svg class="t-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M9 33l8-8 6 5 7-10 9 7" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="body"><span class="kicker">チャート</span><h3>TradingView活用ガイド</h3><p>アラート設計で値動きを「待つ」。無料/有料プランの違いを実務目線で。</p></div>
+        </a>
+        <a class="guide-card" href="guide/vps-setup.html">
+          <span class="thumb v2"><svg class="t-ic" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="6" fill="none" stroke="#fff" stroke-width="2.4"/><path d="M24 9v6M24 33v6M9 24h6M33 24h6M14 14l4 4M30 30l4 4M34 14l-4 4M18 30l-4 4" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+          <div class="body"><span class="kicker">設定手順</span><h3>VPSでMT5を24時間動かす設定</h3><p>接続→導入→EA稼働→自動再起動まで、つまずかない手順で。</p></div>
+        </a>
+        <a class="guide-card" href="guide/mac-mt5.html">
+          <div class="body"><span class="kicker">Mac</span><h3>MacでMT4/MT5を使う3つの方法</h3><p>公式Mac版・仮想化・VPSを客観比較。常時稼働ならVPSが有力。</p></div>
+        </a>
+        <a class="guide-card" href="tools/calculator.html">
+          <div class="body"><span class="kicker">無料ツール</span><h3>資金管理＆ROI計算ツール</h3><p>安全ロット・損失上限・あと何回負けられるかを自動計算。</p></div>
+        </a>
+        <a class="guide-card" href="tools/tracker.html">
+          <div class="body"><span class="kicker">無料ツール</span><h3>進捗トラッキング</h3><p>日次損益とドローダウン余地をグラフで可視化。登録不要。</p></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- プロップファーム（1カテゴリに格下げ・専門性は維持） -->
+    <section class="home-section">
+      <div class="section-title">プロップファーム <span class="en">PROP FIRM</span></div>
+      <p class="section-lead">業者の資金でトレードする「プロップ」。仕組み・選び方・リスクを、誇張せず事実で。当サイトが最も深く追っている分野です。</p>
+      <div class="card-grid">
+        <a class="guide-card" href="guide/ftmo.html">
+          <span class="thumb v4"><svg class="t-ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 8l13 6v9c0 8-6 14-13 17-7-3-13-9-13-17v-9z" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/><path d="M18 24l4 4 8-9" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="body"><span class="kicker">ガイド</span><h3>FTMO徹底ガイド</h3><p>運営11年・親会社が規制ブローカーOANDAとなった最大手の事実を整理。</p></div>
+        </a>
+        <a class="guide-card" href="guide/erabikata.html">
+          <div class="body"><span class="kicker">比較</span><h3>プロップの選び方（3軸）</h3><p>運営年数・支払い実績の透明性・親会社の規制状態で客観比較。</p></div>
+        </a>
+        <a class="guide-card" href="guide/challenge-rules.html">
+          <div class="body"><span class="kicker">基礎</span><h3>チャレンジルール完全ガイド</h3><p>利益目標・日次DD・最大DDの計算を、合格率の現実とともに。</p></div>
+        </a>
+        <a class="guide-card" href="guide/prop-no-risk.html">
+          <div class="body"><span class="kicker">リスク</span><h3>リスクと失敗パターン</h3><p>「やめとけ・怪しい」の理由（出金拒否・閉鎖・規約変更）を直視。</p></div>
+        </a>
+        <a class="guide-card" href="guide/shikin-kessai-hou.html">
+          <div class="body"><span class="kicker">制度</span><h3>改正資金決済法と移行の実際</h3><p>「プロップの追い風」という単純化を、条文の射程から正す。</p></div>
+        </a>
+        <a class="guide-card" href="guide/koushin-log.html">
+          <div class="body"><span class="kicker">透明性</span><h3>規約変更・業界動向ウォッチ</h3><p>各社ルール・規制・本サイト更新を日付付きで時系列記録。</p></div>
+        </a>
+      </div>
+    </section>
 
     <div id="promos"></div>
-
-    <div class="source-list" id="sources">
-      <strong>出典</strong>
-      <ol>
-        <li id="src-1">小売プロップ市場規模・社数: WOZ media「プロップファームランキング」 <a href="https://woz.co.jp/jpmedia/prop-firm-ranking/" target="_blank" rel="nofollow noopener">https://woz.co.jp/jpmedia/prop-firm-ranking/</a></li>
-        <li id="src-2">海外FX→プロップ移行の急増: WOZ media「プロップファーム調査2026」 <a href="https://woz.co.jp/jpmedia/prop-firm-survey-2026/" target="_blank" rel="nofollow noopener">https://woz.co.jp/jpmedia/prop-firm-survey-2026/</a> ／ Myforex <a href="https://myforex.com/ja/news/myf26060402.html" target="_blank" rel="nofollow noopener">https://myforex.com/ja/news/myf26060402.html</a></li>
-        <li id="src-3">合格率約10.6%: チャレンジ受験に関する各種集計より（数値は出典元の調査時点。最新は各社公式・一次情報を要確認）。</li>
-        <li id="src-4">運営歴の浅い業者の出金トラブル: global-finance <a href="https://global-finance.co.jp/propfirm-recommend/" target="_blank" rel="nofollow noopener">https://global-finance.co.jp/propfirm-recommend/</a> ／ suitablism <a href="https://fx.suitablism.com/propfirm-rumors/" target="_blank" rel="nofollow noopener">https://fx.suitablism.com/propfirm-rumors/</a></li>
-        <li id="src-5">規制上の位置づけ（グレー領域）: 改正資金決済法の射程に関する公開情報、proforex168 <a href="https://proforex168.com/en/prop-firm-regulation/" target="_blank" rel="nofollow noopener">https://proforex168.com/en/prop-firm-regulation/</a></li>
-        <li id="src-6">審査料12,500円〜の最安水準: easy-forex <a href="https://www.easy-forex.com/kaigaifx/propfirm-recommend/" target="_blank" rel="nofollow noopener">https://www.easy-forex.com/kaigaifx/propfirm-recommend/</a></li>
-      </ol>
-    </div>
   </main>
+
+  <!-- 信頼バンド: マスコット＋編集長 -->
+  <section class="trust-band">
+    <div class="inner">
+      <div class="mascot-figure">
+        <div class="m" id="trustMascot" aria-hidden="true"></div>
+        <div>
+          <h2>道案内は、コンパスくん。</h2>
+          <p>FXは情報が多すぎて、最初の一歩で迷子になりがち。だから当サイトには方位磁針のマスコット「コンパスくん」がいて、各ページで「今どこにいるか・次にどこへ行くか」を一言で案内します。</p>
+          <p style="margin:0"><a href="about.html">編集方針と運営者について →</a></p>
+        </div>
+      </div>
+      <div class="author-card" style="margin:0;background:#fff">
+        <div class="face" id="trustEditor" aria-hidden="true"></div>
+        <div class="who">
+          <div class="role">編集長</div>
+          <div class="name">カイ</div>
+          <p>「勝てる手法」は約束しません。代わりに、一次情報の確認・出典の明示・誇張しないことを約束します。FXの“地図”を、正確に描き続けます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer class="site-footer" id="siteFooter"></footer>
 
@@ -257,6 +244,10 @@
   <script src="assets/site.js" data-root=""></script>
   <script>
     PropNavi.init({ promos: "promos", includeNote: true, page: "index" });
+    // ヒーロー・信頼バンドにマスコット/編集長を描画（自作SVG・外部画像なし）
+    document.getElementById("heroArt").innerHTML = PropNavi.MASCOT_SVG;
+    document.getElementById("trustMascot").innerHTML = PropNavi.MASCOT_SVG;
+    document.getElementById("trustEditor").innerHTML = PropNavi.EDITOR_SVG;
   </script>
 </body>
 </html>

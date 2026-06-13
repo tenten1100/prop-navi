@@ -1,7 +1,7 @@
 /*
  * tool-config.js — 計算ツールのベンチマーク初期値（差し替え可能）
  *
- * prop-tools/config.js の benchmarks 部分を、プロップナビのツール用に分離したもの。
+ * prop-tools/config.js の benchmarks 部分を、FXコンパスのツール用に分離したもの。
  * アフィリ/noteリンクはサイト共通の assets/links.js（window.PROPNAVI）が管理するため、
  * ここには計算の前提値のみを置く（責務を分ける）。
  *

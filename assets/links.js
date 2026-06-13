@@ -35,8 +35,8 @@ window.PROPNAVI = {
   //   末尾スラッシュなし。公開ドメインが決まったらここだけ差し替える。
   // -------------------------------------------------------------------------
   site: {
-    name: "プロップナビ",                          // サイト名（仮。ここで差し替え可能）
-    tagline: "プロップ実務のインフラを、正確に。",
+    name: "FXコンパス",                            // サイト名（表示名。URL/リポジトリ名 prop-navi は不変）
+    tagline: "FXの、迷わない地図。",
     baseUrl: "https://tenten1100.github.io/prop-navi", // ← 公開URLに差し替え（末尾スラッシュなし）
     updated: "2026-06-13",                         // サイト全体の最終更新日（フッタ表示用）
   },
@@ -79,7 +79,7 @@ window.PROPNAVI = {
       note: "国内サービス・合法。アフィリ単価は最大53,900円/件（ConoHa公式・要ASP管理画面で確定）。",
       category: "vps",
       slot: "primary",
-      pages: ["vps", "vps-setup", "mac-mt5", "shikin-kanri", "calculator", "tracker"],
+      pages: ["vps", "vps-setup", "mac-mt5", "shikin-kanri", "calculator", "tracker", "fx-hajimekata"],
     },
 
     // --- 国内FX/CFD（収益エンジン・合法高単価。ASP=A8等経由） ---
@@ -91,7 +91,7 @@ window.PROPNAVI = {
       note: "国内登録業者・合法。単価は通常1〜1.5万円・キャンペーン時2〜3万円（afbで27,500円実績／要ASP確認）。",
       category: "kokunai-fx",
       slot: "primary",
-      pages: ["kokunai-kouza"],
+      pages: ["kokunai-kouza", "fx-hajimekata"],
     },
     {
       key: "gmoclick",
@@ -101,7 +101,7 @@ window.PROPNAVI = {
       note: "国内登録業者・合法。単価は約1〜1.1万円（公開まとめベース・要ASP確認）。",
       category: "kokunai-fx",
       slot: "primary",
-      pages: ["kokunai-kouza"],
+      pages: ["kokunai-kouza", "fx-hajimekata"],
     },
     {
       key: "dmmcfd",
@@ -123,7 +123,7 @@ window.PROPNAVI = {
       note: "海外SaaSだが金融商品でない・合法。報酬は購入額の30%・ライフタイム継続（要パートナー管理画面で確定）。",
       category: "chart",
       slot: "always",
-      pages: ["index", "vps", "vps-setup", "mac-mt5", "kokunai-kouza", "tradingview", "shikin-kanri", "challenge-rules", "calculator", "tracker"],
+      pages: ["index", "vps", "vps-setup", "mac-mt5", "kokunai-kouza", "tradingview", "shikin-kanri", "challenge-rules", "calculator", "tracker", "fx-hajimekata"],
     },
 
     // --- 暗号資産取引所（補完・CFD/暗号資産トレーダー向け。ASP=A8/アクセストレード等） ---
