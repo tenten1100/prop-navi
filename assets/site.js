@@ -80,12 +80,12 @@
   var NAV = [
     { href: "index.html", label: "ホーム" },
     { href: "guide/fx-hajimekata.html", label: "はじめてのFX" },
-    { href: "guide/kokunai-kouza.html", label: "口座比較" },
+    { href: "guide/kouza-ranking.html", label: "口座比較" },
+    { href: "guide/spread-hikaku.html", label: "スプレッド" },
     { href: "guide/vps.html", label: "ツール・環境" },
     { href: "tools/calculator.html", label: "計算ツール" },
     { href: "guide/ftmo.html", label: "プロップ" },
-    { href: "guide/prop-yougo.html", label: "用語集" },
-    { href: "guide/kokunai-kouza.html", label: "口座をさがす", cta: true },
+    { href: "guide/kouza-ranking.html", label: "口座をさがす", cta: true },
   ];
 
   /**
@@ -211,10 +211,10 @@
 
     var rows = "";
     ordered.forEach(function (a) {
-      rows += promoRow(a.label, a.note, a.url, a.bannerHtml);
+      rows += promoRow(a.label, a.note, a.url, a.bannerHtml, a.category);
     });
     if (includeNote && CFG.note) {
-      rows += promoRow(CFG.note.label, CFG.note.note, CFG.note.url);
+      rows += promoRow(CFG.note.label, CFG.note.note, CFG.note.url, CFG.note.bannerHtml, "");
     }
     if (!rows) return;   // 対象枠が皆無なら何も描画しない（空のブロックを出さない）
 
@@ -227,12 +227,22 @@
       "リンクは広告（PR）です。各社の利用は自己責任でご判断ください。</p>";
   }
 
-  function promoRow(label, note, url, bannerHtml) {
+  var CTA_COPY = {
+    "kokunai-fx": { text: "無料で口座開設", micro: "最短5分・維持費0円" },
+    "kokunai-cfd": { text: "無料で口座開設", micro: "最短5分・維持費0円" },
+    "vps":        { text: "プランを見る",   micro: "初月無料あり" },
+    "chart":      { text: "無料で始める",   micro: "有料プランは30日返金保証" },
+    "prop":       { text: "公式サイトへ",   micro: "" },
+    "crypto":     { text: "無料で口座開設", micro: "最短10分" },
+  };
+
+  function promoRow(label, note, url, bannerHtml, category) {
     var hasUrl = url && String(url).trim() !== "";
+    var copy = CTA_COPY[category] || { text: "公式サイトへ", micro: "" };
+    var microHtml = copy.micro ? '<span class="micro">' + esc(copy.micro) + "</span>" : "";
     var cta = hasUrl
-      ? '<a class="promo-cta" href="' + escAttr(url) + '" target="_blank" rel="nofollow sponsored noopener">公式サイト</a>'
+      ? '<a class="promo-cta" href="' + escAttr(url) + '" target="_blank" rel="nofollow sponsored noopener">' + esc(copy.text) + microHtml + "</a>"
       : '<span class="promo-cta disabled">準備中</span>';
-    // ASPバナー（リンクコード改変禁止のため、貼られた広告コードは無加工で出す）
     var banner = bannerHtml && String(bannerHtml).trim() !== ""
       ? '<div class="promo-banner">' + bannerHtml + "</div>"
       : "";
