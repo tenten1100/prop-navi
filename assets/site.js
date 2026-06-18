@@ -1,21 +1,11 @@
 /*
- * site.js — FXコンパス 共通の描画部品（ヘッダ/フッタ/免責バー/アフィリ導線）
+ * site.js — FXコンパス v5 (Agency-Grade)
  *
- * 役割:
- *   - 全ページ共通のヘッダ・ナビ・免責バー・フッタを1か所で描画し、文言のブレを防ぐ。
- *   - アフィリ/note導線（links.js のプレースホルダ）をPR表記付きで描画。URL空は「準備中」。
+ * Shared rendering: header, footer, disclaimer bar, affiliate promos.
+ * Interactivity: hamburger nav, scroll animations, reading progress,
+ *   header shadow, counter animation, smooth scroll.
  *
- * パス方針:
- *   ページの階層が異なる（ルート / guide/ / legal/ / tools/）ため、各ページは
- *   data-root 属性（"" or "../"）でルートまでの相対プレフィックスを渡す。
- *   外部CDN/解析タグは読み込まない（依存ゼロ・APIコストゼロ）。
- *
- * 注意: 売買助言・通貨ペア・タイミングに類する文言は一切置かない（R1ハード条件）。
- *
- * アフィリ導線の出し分け（サイト戦略v2 §4「全ページ同一羅列をやめる」）:
- *   各ページは PropNavi.init({ promos:"...", page:"<ページキー>" }) でページキーを渡す。
- *   renderPromos は links.js の各枠の pages 配列と突き合わせ、そのページに関連する枠だけを描画する。
- *   page を渡さない（旧呼び出し）場合は従来どおり全枠を描画する（後方互換）。
+ * No external CDN, analytics, or runtime API calls.
  */
 
 (function (root) {
@@ -24,7 +14,6 @@
   var CFG = root.PROPNAVI || {};
   var SITE = CFG.site || {};
 
-  // このスクリプトタグから data-root（ルートまでの相対プレフィックス）を読む。
   var thisScript = document.currentScript;
   var ROOT = (thisScript && thisScript.getAttribute("data-root")) || "";
 
@@ -39,8 +28,8 @@
   }
   function escAttr(s) { return esc(s).replace(/"/g, "&quot;"); }
 
-  // マスコット「コンパスくん」: 方位磁針のキャラ（外部画像を使わない自作インラインSVG）。
-  // ヒーロー・吹き出し・信頼バンド・編集長カードで再利用する。
+  /* ─── SVG Assets ─── */
+
   var MASCOT_SVG =
     '<svg viewBox="0 0 120 120" role="img" aria-label="コンパスくん">' +
     '<defs><linearGradient id="cmg" x1="0" y1="0" x2="1" y2="1">' +
@@ -58,7 +47,6 @@
     '<circle cx="44" cy="66" r="3" fill="#fbbf24" opacity=".6"/><circle cx="76" cy="66" r="3" fill="#fbbf24" opacity=".6"/>' +
     '</svg>';
 
-  // 編集長アバター（顔の見える編集長。実写でなくフラットな自作SVG）。
   var EDITOR_SVG =
     '<svg viewBox="0 0 64 64" role="img" aria-label="編集長カイ">' +
     '<defs><linearGradient id="edg" x1="0" y1="0" x2="1" y2="1">' +
@@ -72,8 +60,15 @@
     '<path d="M32 42 L28 50 L32 53 L36 50Z" fill="#f97316"/>' +
     '</svg>';
 
-  // ナビ項目（href はルート相対で持ち、ROOT を前置して各階層から正しく解決する）。
-  // FX総合メディア化（門戸を広く）: FX全般→口座比較→ツール環境→プロップ(1カテゴリ)→税金→用語集。
+  var LOGO_MARK =
+    '<svg viewBox="0 0 24 24" aria-hidden="true">' +
+    '<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/>' +
+    '<polygon points="12,6 14,12 12,11 10,12" fill="#f97316"/>' +
+    '<polygon points="12,18 10,12 12,13 14,12" fill="currentColor"/>' +
+    '<circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg>';
+
+  /* ─── Navigation ─── */
+
   var NAV = [
     { href: "index.html", label: "ホーム" },
     { href: "guide/fx-hajimekata.html", label: "はじめてのFX" },
@@ -85,15 +80,11 @@
     { href: "guide/kouza-ranking.html", label: "口座をさがす", cta: true },
   ];
 
-  /**
-   * Organization 構造化データを <head> に注入（E-E-A-T・運営者の実在性）。
-   * links.js の site.baseUrl/name を使う（dist では publish.py が実URLへ置換済み）。
-   * 既に Organization JSON-LD があるページでは二重注入しない。
-   */
+  /* ─── Organization JSON-LD ─── */
+
   function injectOrganization() {
     var base = (SITE.baseUrl || "").replace(/\/$/, "");
     if (!base) return;
-    // 既存の Organization（単独エンティティ）があればスキップ。publisher内の参照は別物。
     var existing = document.querySelectorAll('script[type="application/ld+json"]');
     for (var i = 0; i < existing.length; i++) {
       if (/"@type"\s*:\s*"Organization"[\s\S]*"logo"/.test(existing[i].textContent || "")) return;
@@ -113,7 +104,8 @@
     document.head.appendChild(s);
   }
 
-  /** 免責バーを<body>先頭へ挿入。 */
+  /* ─── Disclaimer Bar ─── */
+
   function renderDisclaimerBar() {
     var bar = document.createElement("div");
     bar.className = "disclaimer-bar";
@@ -124,15 +116,8 @@
     document.body.insertBefore(bar, document.body.firstChild);
   }
 
-  // ヘッダロゴの方位磁針マーク（小型・白抜き）。
-  var LOGO_MARK =
-    '<svg viewBox="0 0 24 24" aria-hidden="true">' +
-    '<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/>' +
-    '<polygon points="12,6 14,12 12,11 10,12" fill="#f97316"/>' +
-    '<polygon points="12,18 10,12 12,13 14,12" fill="currentColor"/>' +
-    '<circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg>';
+  /* ─── Header with Hamburger ─── */
 
-  /** ヘッダ（サイト名 + ナビ）を <header id="siteHeader"> へ描画。 */
   function renderHeader() {
     var el = document.getElementById("siteHeader");
     if (!el) return;
@@ -147,11 +132,55 @@
       '<span class="brand-text"><b>' + name + "</b>" +
       '<span class="tagline">' + esc(SITE.tagline || "") + "</span></span>" +
       "</a>" +
-      '<nav aria-label="メインナビ">' + navHtml + "</nav>" +
-      "</div>";
+      '<nav id="mainNav" aria-label="メインナビ">' + navHtml + "</nav>" +
+      '<button class="hamburger" id="hamburgerBtn" aria-label="メニュー" aria-expanded="false">' +
+      "<span></span><span></span><span></span>" +
+      "</button>" +
+      "</div>" +
+      '<div class="nav-overlay" id="navOverlay"></div>';
+
+    initHamburger();
+    initHeaderScroll(el);
   }
 
-  /** フッタを <footer id="siteFooter"> へ描画。 */
+  function initHamburger() {
+    var btn = document.getElementById("hamburgerBtn");
+    var nav = document.getElementById("mainNav");
+    var overlay = document.getElementById("navOverlay");
+    if (!btn || !nav) return;
+
+    function toggle(open) {
+      var isOpen = typeof open === "boolean" ? open : !nav.classList.contains("open");
+      nav.classList.toggle("open", isOpen);
+      btn.classList.toggle("active", isOpen);
+      btn.setAttribute("aria-expanded", isOpen);
+      document.body.classList.toggle("menu-open", isOpen);
+      if (overlay) overlay.classList.toggle("show", isOpen);
+    }
+
+    btn.addEventListener("click", function () { toggle(); });
+    if (overlay) overlay.addEventListener("click", function () { toggle(false); });
+
+    nav.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () { toggle(false); });
+    });
+  }
+
+  function initHeaderScroll(header) {
+    var ticking = false;
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          header.classList.toggle("scrolled", window.scrollY > 20);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  /* ─── Footer ─── */
+
   function renderFooter() {
     var el = document.getElementById("siteFooter");
     if (!el) return;
@@ -172,56 +201,16 @@
       '<p class="foot-disclaimer">最終更新日: <span class="updated">' +
       esc(SITE.updated || "") +
       "</span> ／ &copy; " + esc(SITE.name || "FXコンパス") +
-      "</p>" +
-      "</div>";
+      "</p></div>";
   }
 
-  /** 枠 a がページ key を対象にしているか（pages に "*" か key を含むか）。 */
+  /* ─── Affiliate Promos ─── */
+
   function affiliateMatchesPage(a, page) {
-    if (!page) return true;                       // ページ指定なし=従来どおり全枠（後方互換）
+    if (!page) return true;
     var pages = a.pages;
-    if (!Array.isArray(pages) || pages.length === 0) return true; // pages未設定は全ページ扱い
+    if (!Array.isArray(pages) || pages.length === 0) return true;
     return pages.indexOf("*") !== -1 || pages.indexOf(page) !== -1;
-  }
-
-  /**
-   * アフィリ/note導線を描画する。引数のidの要素へ。
-   * links.js（window.PROPNAVI）のプレースホルダを読む。URL未設定枠は「準備中」表示。
-   *
-   * opts.page を渡すと、各枠の pages 配列に一致する枠だけを描画する（全ページ同一羅列をやめる）。
-   * slot="primary" を先に、slot="always"（TradingView等の常設サブ）を後に並べる。
-   */
-  function renderPromos(elId, opts) {
-    var el = document.getElementById(elId || "promos");
-    if (!el) return;
-    opts = opts || {};
-    var includeNote = opts.includeNote !== false;
-    var page = opts.page || "";
-
-    // ページに関連する枠だけを抽出し、primary→always の順に並べる。
-    var matched = (CFG.affiliates || []).filter(function (a) {
-      return affiliateMatchesPage(a, page);
-    });
-    var ordered = matched
-      .filter(function (a) { return a.slot !== "always"; })
-      .concat(matched.filter(function (a) { return a.slot === "always"; }));
-
-    var rows = "";
-    ordered.forEach(function (a) {
-      rows += promoRow(a.label, a.note, a.url, a.bannerHtml, a.category);
-    });
-    if (includeNote && CFG.note) {
-      rows += promoRow(CFG.note.label, CFG.note.note, CFG.note.url, CFG.note.bannerHtml, "");
-    }
-    if (!rows) return;   // 対象枠が皆無なら何も描画しない（空のブロックを出さない）
-
-    el.className = "promo-block";
-    el.innerHTML =
-      '<div class="head">このページに関連するサービス</div>' +
-      rows +
-      '<p class="basis">国内で合法に扱える高単価サービス（FX用VPS・国内FX/CFD・チャートツール等）を中心に、' +
-      "プロップは審査済みの社のみを掲載しています。海外FXブローカーのアフィリは扱いません。" +
-      "リンクは広告（PR）です。各社の利用は自己責任でご判断ください。</p>";
   }
 
   var CTA_COPY = {
@@ -249,17 +238,44 @@
       '<div class="promo-main">' +
       '<div class="promo-label">' + esc(label) + "</div>" +
       '<div class="promo-note">' + esc(note) + "</div>" +
-      "</div>" +
-      cta +
-      "</div>" +
-      banner
+      "</div>" + cta + "</div>" + banner
     );
   }
 
-  /**
-   * マスコット「コンパスくん」の吹き出しHTMLを返す（記事中に差し込む用）。
-   *   PropNavi.mascotSay("…") を innerHTML 等で使う。
-   */
+  function renderPromos(elId, opts) {
+    var el = document.getElementById(elId || "promos");
+    if (!el) return;
+    opts = opts || {};
+    var includeNote = opts.includeNote !== false;
+    var page = opts.page || "";
+
+    var matched = (CFG.affiliates || []).filter(function (a) {
+      return affiliateMatchesPage(a, page);
+    });
+    var ordered = matched
+      .filter(function (a) { return a.slot !== "always"; })
+      .concat(matched.filter(function (a) { return a.slot === "always"; }));
+
+    var rows = "";
+    ordered.forEach(function (a) {
+      rows += promoRow(a.label, a.note, a.url, a.bannerHtml, a.category);
+    });
+    if (includeNote && CFG.note) {
+      rows += promoRow(CFG.note.label, CFG.note.note, CFG.note.url, CFG.note.bannerHtml, "");
+    }
+    if (!rows) return;
+
+    el.className = "promo-block";
+    el.innerHTML =
+      '<div class="head">このページに関連するサービス</div>' +
+      rows +
+      '<p class="basis">国内で合法に扱える高単価サービス（FX用VPS・国内FX/CFD・チャートツール等）を中心に、' +
+      "プロップは審査済みの社のみを掲載しています。海外FXブローカーのアフィリは扱いません。" +
+      "リンクは広告（PR）です。各社の利用は自己責任でご判断ください。</p>";
+  }
+
+  /* ─── Mascot / Author ─── */
+
   function mascotSay(text, who) {
     return (
       '<div class="mascot-say">' +
@@ -269,7 +285,6 @@
     );
   }
 
-  /** data-mascot-say 属性を持つ要素を吹き出しに変換（HTMLを書かずに使える簡便版）。 */
   function hydrateMascots() {
     var nodes = document.querySelectorAll("[data-mascot-say]");
     for (var i = 0; i < nodes.length; i++) {
@@ -279,18 +294,16 @@
     }
   }
 
-  /** 編集長カイの署名カードHTML（記事末のE-E-A-T用）。 */
   function authorCard() {
     return (
       '<div class="author-card">' +
       '<div class="face">' + EDITOR_SVG + "</div>" +
       '<div class="who"><div class="role">編集長</div><div class="name">カイ</div>' +
       "<p>FX・マクロ経済の分析を背景に持つ個人運営の編集長。「勝てる手法」は約束せず、" +
-      "一次情報の確認・出典の明示・誇張しないことを編集方針に、FXの“地図”を正確に描き続けます。</p></div></div>"
+      "一次情報の確認・出典の明示・誇張しないことを編集方針に、FXの\u201C地図\u201Dを正確に描き続けます。</p></div></div>"
     );
   }
 
-  /** data-author-card 属性を持つ要素を編集長カードに変換。 */
   function hydrateAuthorCards() {
     var nodes = document.querySelectorAll("[data-author-card]");
     for (var i = 0; i < nodes.length; i++) {
@@ -298,7 +311,110 @@
     }
   }
 
-  /** ページ初期化のまとめ呼び出し。 */
+  /* ─── Scroll Animations (IntersectionObserver) ─── */
+
+  function initScrollAnimations() {
+    if (!("IntersectionObserver" in window)) {
+      document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-scale").forEach(function (el) {
+        el.classList.add("visible");
+      });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+
+    document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-scale").forEach(function (el) {
+      observer.observe(el);
+    });
+  }
+
+  /* ─── Reading Progress Bar ─── */
+
+  function initReadingProgress() {
+    var bar = document.querySelector(".reading-progress");
+    if (!bar) return;
+    var article = document.querySelector("article");
+    if (!article) return;
+
+    var ticking = false;
+    window.addEventListener("scroll", function () {
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          var rect = article.getBoundingClientRect();
+          var total = article.scrollHeight - window.innerHeight;
+          var scrolled = -rect.top;
+          var pct = Math.min(Math.max(scrolled / total * 100, 0), 100);
+          bar.style.width = pct + "%";
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  /* ─── Counter Animation ─── */
+
+  function initCounters() {
+    var counters = document.querySelectorAll("[data-count]");
+    if (!counters.length) return;
+    if (!("IntersectionObserver" in window)) {
+      counters.forEach(function (el) { el.textContent = el.getAttribute("data-count"); });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    counters.forEach(function (el) { observer.observe(el); });
+  }
+
+  function animateCounter(el) {
+    var target = parseInt(el.getAttribute("data-count"), 10);
+    var suffix = el.getAttribute("data-suffix") || "";
+    var prefix = el.getAttribute("data-prefix") || "";
+    var duration = 1200;
+    var start = performance.now();
+
+    function step(now) {
+      var elapsed = now - start;
+      var progress = Math.min(elapsed / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      var current = Math.round(target * eased);
+      el.textContent = prefix + current.toLocaleString() + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* ─── Smooth Scroll for Anchor Links ─── */
+
+  function initSmoothScroll() {
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest('a[href^="#"]');
+      if (!a) return;
+      var id = a.getAttribute("href").slice(1);
+      var target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      var headerH = document.querySelector(".site-header");
+      var offset = headerH ? headerH.offsetHeight + 16 : 16;
+      var top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: top, behavior: "smooth" });
+    });
+  }
+
+  /* ─── Init ─── */
+
   function init(opts) {
     injectOrganization();
     renderDisclaimerBar();
@@ -307,6 +423,11 @@
     hydrateMascots();
     hydrateAuthorCards();
     if (opts && opts.promos) renderPromos(opts.promos, opts);
+
+    initScrollAnimations();
+    initReadingProgress();
+    initCounters();
+    initSmoothScroll();
   }
 
   root.PropNavi = {
