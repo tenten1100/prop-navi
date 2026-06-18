@@ -112,6 +112,43 @@
         「始値（はじめね）」「終値（おわりね）」「高値（たかね）」「安値（やすね）」の4本値で構成されます。
       </p>
 
+      <figure class="article-fig">
+        <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ローソク足の構造：陽線と陰線の違いを図解">
+          <defs>
+            <linearGradient id="bullG" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#16a34a"/><stop offset="100%" stop-color="#22c55e"/></linearGradient>
+            <linearGradient id="bearG" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ef4444"/><stop offset="100%" stop-color="#f87171"/></linearGradient>
+          </defs>
+          <rect width="600" height="280" rx="16" fill="#f8fafc"/>
+          <text x="155" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#16a34a">陽線（上昇）</text>
+          <text x="445" y="28" text-anchor="middle" font-size="15" font-weight="700" fill="#ef4444">陰線（下落）</text>
+          <!-- Bullish candle -->
+          <line x1="155" y1="45" x2="155" y2="90" stroke="#16a34a" stroke-width="2.5"/>
+          <rect x="125" y="90" width="60" height="100" rx="4" fill="url(#bullG)"/>
+          <line x1="155" y1="190" x2="155" y2="235" stroke="#16a34a" stroke-width="2.5"/>
+          <!-- Bullish labels -->
+          <text x="80" y="50" text-anchor="end" font-size="11" fill="#64748b">高値</text><line x1="83" y1="47" x2="152" y2="47" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="80" y="97" text-anchor="end" font-size="11" fill="#16a34a" font-weight="600">終値</text><line x1="83" y1="93" x2="122" y2="93" stroke="#16a34a" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="80" y="195" text-anchor="end" font-size="11" fill="#16a34a" font-weight="600">始値</text><line x1="83" y1="191" x2="122" y2="191" stroke="#16a34a" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="80" y="240" text-anchor="end" font-size="11" fill="#64748b">安値</text><line x1="83" y1="237" x2="152" y2="237" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="200" y="145" font-size="10" fill="#64748b">← 実体</text>
+          <text x="170" y="68" font-size="10" fill="#64748b">上ヒゲ →</text>
+          <text x="170" y="218" font-size="10" fill="#64748b">下ヒゲ →</text>
+          <!-- Bearish candle -->
+          <line x1="445" y1="45" x2="445" y2="90" stroke="#ef4444" stroke-width="2.5"/>
+          <rect x="415" y="90" width="60" height="100" rx="4" fill="url(#bearG)"/>
+          <line x1="445" y1="190" x2="445" y2="235" stroke="#ef4444" stroke-width="2.5"/>
+          <!-- Bearish labels -->
+          <text x="490" y="97" font-size="11" fill="#ef4444" font-weight="600">始値</text><line x1="478" y1="93" x2="487" y2="93" stroke="#ef4444" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="490" y="195" font-size="11" fill="#ef4444" font-weight="600">終値</text><line x1="478" y1="191" x2="487" y2="191" stroke="#ef4444" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="490" y="50" font-size="11" fill="#64748b">高値</text><line x1="448" y1="47" x2="487" y2="47" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+          <text x="490" y="240" font-size="11" fill="#64748b">安値</text><line x1="448" y1="237" x2="487" y2="237" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+          <!-- Separator -->
+          <line x1="300" y1="20" x2="300" y2="260" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4"/>
+          <text x="300" y="270" text-anchor="middle" font-size="11" fill="#94a3b8">始値 &lt; 終値 → 陽線（緑）　　始値 &gt; 終値 → 陰線（赤）</text>
+        </svg>
+        <figcaption>ローソク足の構造：陽線は始値より終値が高い（上昇）、陰線はその逆（下落）</figcaption>
+      </figure>
+
       <h3>陽線と陰線</h3>
       <p>
         終値が始値より高い（＝値上がりした）ローソク足を<strong>陽線</strong>、終値が始値より低い（＝値下がりした）ローソク足を<strong>陰線</strong>と呼びます。

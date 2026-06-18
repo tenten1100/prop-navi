@@ -89,6 +89,35 @@
       </div>
 
       <h2 id="what">FXとは（仕組みを30秒で）</h2>
+
+      <figure class="article-fig">
+        <svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FXの基本構造：円でドルを買い、レートが動いたら決済して差額が損益になる図">
+          <defs>
+            <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f97316"/><stop offset="100%" stop-color="#fb923c"/></linearGradient>
+            <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0284c7"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient>
+            <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#16a34a"/><stop offset="100%" stop-color="#4ade80"/></linearGradient>
+          </defs>
+          <rect x="20" y="40" width="160" height="120" rx="16" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+          <text x="100" y="80" text-anchor="middle" font-size="28" font-weight="800" fill="#f97316">¥</text>
+          <text x="100" y="108" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">円で購入</text>
+          <text x="100" y="128" text-anchor="middle" font-size="11" fill="#64748b">例: 1ドル=150円</text>
+          <path d="M190 100 L250 100" stroke="#f97316" stroke-width="2.5" stroke-dasharray="6 4" fill="none" marker-end="url(#arrowO)"/>
+          <defs><marker id="arrowO" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#f97316"/></marker></defs>
+          <rect x="260" y="40" width="160" height="120" rx="16" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+          <text x="340" y="80" text-anchor="middle" font-size="28" font-weight="800" fill="#0284c7">$</text>
+          <text x="340" y="108" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">ドルを保有</text>
+          <text x="340" y="128" text-anchor="middle" font-size="11" fill="#64748b">レートが変動…</text>
+          <path d="M430 100 L490 100" stroke="#0284c7" stroke-width="2.5" stroke-dasharray="6 4" fill="none" marker-end="url(#arrowB)"/>
+          <defs><marker id="arrowB" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#0284c7"/></marker></defs>
+          <rect x="500" y="40" width="160" height="120" rx="16" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+          <text x="580" y="76" text-anchor="middle" font-size="22" font-weight="800" fill="#16a34a">¥ → ¥+α</text>
+          <text x="580" y="108" text-anchor="middle" font-size="13" font-weight="600" fill="#0f172a">決済して差額</text>
+          <text x="580" y="128" text-anchor="middle" font-size="11" fill="#64748b">差額＝損益</text>
+          <text x="340" y="190" text-anchor="middle" font-size="12" fill="#94a3b8">※ レートが不利に動けば損失になります</text>
+        </svg>
+        <figcaption>FXの基本構造：通貨を買い、レート変動後に決済して差額が損益に</figcaption>
+      </figure>
+
       <p>
         FXは「ある国の通貨を、別の通貨で売買する」取引です。たとえば米ドル/円なら、円でドルを買い、価格が動いたところで決済すれば、その差額が損益になります。
         為替レートは各国の金利・景気・政策などで日々動き、その値動きをとらえて利益を狙う——というのが基本構造です。
@@ -101,6 +130,38 @@
       <div data-mascot-say="迷ったら『余裕資金で・少額から・国内の登録業者で』の3つだけ覚えてね。まずは慣れることが一番だよ。"></div>
 
       <h2 id="words">最初に押さえる4つの言葉</h2>
+
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="ic-icon" style="background:linear-gradient(135deg,#ef4444,#f97316)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2v20M2 12l4-4v8l-4-4M22 12l-4-4v8l4-4"/></svg>
+          </div>
+          <div class="ic-title">レバレッジ</div>
+          <div class="ic-desc">証拠金の最大25倍まで取引可能。倍率が高いほど効率↑ リスクも↑</div>
+        </div>
+        <div class="info-card">
+          <div class="ic-icon" style="background:linear-gradient(135deg,#0284c7,#38bdf8)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 12h16M4 12l4-4M4 12l4 4M20 12l-4-4M20 12l-4 4"/></svg>
+          </div>
+          <div class="ic-title">スプレッド</div>
+          <div class="ic-desc">買値と売値の差＝実質コスト。狭いほどトレーダーに有利</div>
+        </div>
+        <div class="info-card">
+          <div class="ic-icon" style="background:linear-gradient(135deg,#eab308,#f97316)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          </div>
+          <div class="ic-title">スワップポイント</div>
+          <div class="ic-desc">金利差による日々の受払い。方向次第でプラスにもマイナスにも</div>
+        </div>
+        <div class="info-card">
+          <div class="ic-icon" style="background:linear-gradient(135deg,#7c3aed,#a78bfa)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 7h4v4H7zM13 13h4v4h-4z"/></svg>
+          </div>
+          <div class="ic-title">pips・ロット</div>
+          <div class="ic-desc">値動きの最小単位と取引数量の単位。損益計算の基本</div>
+        </div>
+      </div>
+
       <h3>① レバレッジ</h3>
       <p>証拠金の何倍まで取引できるかの倍率。日本国内の個人向けFXでは<strong>最大25倍</strong>に規制されています<a href="#src-1">［1］</a>。倍率が高いほど効率は上がりますが、損失も同率で拡大します。</p>
       <h3>② スプレッド</h3>
@@ -122,6 +183,34 @@
       </div>
 
       <h2 id="steps">始め方の5ステップ</h2>
+
+      <div class="flow-diagram">
+        <div class="flow-step">
+          <div class="fs-num">1</div>
+          <div class="fs-label">余裕資金を<br>決める</div>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">
+          <div class="fs-num">2</div>
+          <div class="fs-label">口座を<br>選ぶ</div>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">
+          <div class="fs-num">3</div>
+          <div class="fs-label">口座開設<br>申し込み</div>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">
+          <div class="fs-num">4</div>
+          <div class="fs-label">少額で<br>初取引</div>
+        </div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">
+          <div class="fs-num">5</div>
+          <div class="fs-label">記録して<br>振り返る</div>
+        </div>
+      </div>
+
       <ol>
         <li><strong>余裕資金を決める</strong>：いくらまでなら失っても大丈夫かを先に決めます。</li>
         <li><strong>国内の登録業者で口座を選ぶ</strong>：少額単位・スプレッド・アプリの使いやすさで比較。<a href="kokunai-kouza.html">口座比較ページ</a>を参考に。</li>

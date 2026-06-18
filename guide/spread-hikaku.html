@@ -102,6 +102,29 @@
 
       <!-- ===== 1. スプレッドとは何か ===== -->
       <h2 id="what">1. スプレッドとは何か</h2>
+
+      <figure class="article-fig">
+        <svg viewBox="0 0 600 180" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="スプレッドの仕組み：買値と売値の差が実質コスト">
+          <rect width="600" height="180" rx="16" fill="#f8fafc"/>
+          <rect x="40" y="30" width="220" height="55" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+          <text x="150" y="52" text-anchor="middle" font-size="11" font-weight="600" fill="#16a34a">売値（Bid）</text>
+          <text x="150" y="73" text-anchor="middle" font-size="20" font-weight="800" fill="#0f172a">155.003円</text>
+          <rect x="340" y="30" width="220" height="55" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+          <text x="450" y="52" text-anchor="middle" font-size="11" font-weight="600" fill="#0284c7">買値（Ask）</text>
+          <text x="450" y="73" text-anchor="middle" font-size="20" font-weight="800" fill="#0f172a">155.005円</text>
+          <path d="M265 57 L335 57" stroke="#f97316" stroke-width="2.5" marker-start="url(#arrL)" marker-end="url(#arrR)"/>
+          <defs>
+            <marker id="arrL" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M10,0 L0,5 L10,10 Z" fill="#f97316"/></marker>
+            <marker id="arrR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#f97316"/></marker>
+          </defs>
+          <text x="300" y="48" text-anchor="middle" font-size="10" font-weight="700" fill="#f97316">差＝スプレッド</text>
+          <rect x="180" y="110" width="240" height="50" rx="12" fill="#fff7ed" stroke="#f97316" stroke-width="1.5"/>
+          <text x="300" y="133" text-anchor="middle" font-size="12" font-weight="700" fill="#f97316">スプレッド = 0.2銭（0.002円）</text>
+          <text x="300" y="150" text-anchor="middle" font-size="10" fill="#64748b">1万通貨 × 0.002円 = 1回あたり約20円のコスト</text>
+        </svg>
+        <figcaption>スプレッドの仕組み：買値と売値の差がトレーダーの実質コストになる</figcaption>
+      </figure>
+
       <p>
         スプレッドとは、FXで通貨を買うときの値段（Ask／買値）と売るときの値段（Bid／売値）の差です。
         たとえば米ドル/円の買値が155.005円、売値が155.003円なら、スプレッドは0.2銭（0.002円）になります。
