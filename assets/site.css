@@ -1419,6 +1419,17 @@ main > article {
   border-left: 4px solid var(--orange);
 }
 
+.ai-summary {
+  font-size: .93rem;
+  color: var(--ink);
+  line-height: 1.8;
+  margin-bottom: 24px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, rgba(59,130,246,.06), rgba(147,51,234,.06));
+  border-radius: var(--radius);
+  border: 1px solid rgba(59,130,246,.15);
+}
+
 /* Article content */
 article h2 {
   margin: 2.8em 0 .8em;

@@ -54,6 +54,31 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".lead", ".article-head h1", ".note-box"]
+    },
+    "url": "https://hajimete-fx.com/guide/vps-setup.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "FX用VPSの設定手順",
+    "description": "FXの自動売買（EA）用VPSを契約して稼働させるまでの手順",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "VPSプランを選んで契約する", "text": "Windows対応のVPSを選び、メモリ・CPU・リージョンを確認して契約します。" },
+      { "@type": "HowToStep", "position": 2, "name": "リモートデスクトップで接続する", "text": "Windowsの「リモートデスクトップ接続」またはMacの「Microsoft Remote Desktop」でVPSに接続します。" },
+      { "@type": "HowToStep", "position": 3, "name": "MT4/MT5をインストールする", "text": "VPS上のブラウザからMT4/MT5をダウンロードしてインストールします。" },
+      { "@type": "HowToStep", "position": 4, "name": "EAを設置して稼働させる", "text": "EAファイルをMT4/MT5のExpertsフォルダに配置し、自動売買を有効にして稼働させます。" }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header" id="siteHeader"></header>

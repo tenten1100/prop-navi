@@ -54,6 +54,32 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".lead", ".article-head h1", ".note-box"]
+    },
+    "url": "https://hajimete-fx.com/guide/fx-hajimekata.html"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "FXの始め方｜口座開設から初回取引までの5ステップ",
+    "description": "FX初心者が口座開設から初回取引に至るまでの5つの手順を解説",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "FX口座を選ぶ", "text": "金融庁登録済みの国内FX会社から、スプレッド・取引ツール・最小取引単位を比較して口座を選びます。" },
+      { "@type": "HowToStep", "position": 2, "name": "口座開設の申し込み", "text": "本人確認書類（マイナンバーカードまたは運転免許証）を準備し、オンラインで口座開設を申し込みます。審査は通常1〜3営業日です。" },
+      { "@type": "HowToStep", "position": 3, "name": "口座に資金を入金する", "text": "開設された口座にクイック入金やネットバンキングで資金を入金します。多くの会社で振込手数料は無料です。" },
+      { "@type": "HowToStep", "position": 4, "name": "デモトレードで練習する", "text": "実際に資金を使う前に、デモ口座で注文操作やチャートの見方を練習します。" },
+      { "@type": "HowToStep", "position": 5, "name": "少額で初回取引を行う", "text": "1,000通貨など少額ロットで実際の取引を始めます。まずはUSD/JPYなど馴染みのある通貨ペアから。" }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header" id="siteHeader"></header>
@@ -76,6 +102,8 @@
         <strong>当サイトは特定の売買タイミングや手法の助言は行いません</strong>。仕組みと準備を正確に整えるための地図です。
       </p>
 
+
+      <p class="ai-summary">FXとは2つの通貨を交換する取引で、国内FX口座は約6,000円から始められます。口座選び→開設→入金→デモ練習→少額取引の5ステップで始められます。金融庁登録の国内FX会社を選ぶのが鉄則です。</p>
       <div class="toc" aria-label="目次">
         <span class="toc-title">このページの内容</span>
         <ol>
@@ -253,14 +281,20 @@
       </div>
 
       <h2 id="faq">よくある質問</h2>
-      <dl class="faq">
-        <dt>FXはいくらから始められますか？</dt>
-        <dd>1,000通貨単位に対応した国内口座なら、数千円程度の証拠金から始められます。まずは余裕資金の範囲で少額から、が基本です。</dd>
-        <dt>レバレッジは何倍までかけられますか？</dt>
-        <dd>日本国内の個人向けFXでは最大25倍に規制されています<a href="#src-1">［1］</a>。高倍率は損失も同率で拡大するため、初心者は低い実効レバレッジから。</dd>
-        <dt>FXの利益に税金はかかりますか？</dt>
-        <dd>国内FXの利益は申告分離課税（一般に合計20.315%）の対象で、一定額を超えると確定申告が必要です。詳しくは <a href="kakutei-shinkoku.html">税金・確定申告ガイド</a> と国税庁の情報をご確認ください。</dd>
-      </dl>
+      <div class="faq">
+        <details>
+          <summary>FXはいくらから始められますか？</summary>
+          <div class="fbody">1,000通貨単位に対応した国内口座なら、数千円程度の証拠金から始められます。まずは余裕資金の範囲で少額から、が基本です。</div>
+        </details>
+        <details>
+          <summary>レバレッジは何倍までかけられますか？</summary>
+          <div class="fbody">日本国内の個人向けFXでは最大25倍に規制されています<a href="#src-1">［1］</a>。高倍率は損失も同率で拡大するため、初心者は低い実効レバレッジから。</div>
+        </details>
+        <details>
+          <summary>FXの利益に税金はかかりますか？</summary>
+          <div class="fbody">国内FXの利益は申告分離課税（一般に合計20.315%）の対象で、一定額を超えると確定申告が必要です。詳しくは <a href="kakutei-shinkoku.html">税金・確定申告ガイド</a> と国税庁の情報をご確認ください。</div>
+        </details>
+      </div>
 
       <div id="promos"></div>
 
