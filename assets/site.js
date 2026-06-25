@@ -601,6 +601,22 @@
     items.forEach(function (li) { observer.observe(li); });
   }
 
+  /* ─── Affiliate Link Hydration ─── */
+
+  function hydrateAffiliateLinks() {
+    var affiliates = CFG.affiliates || [];
+    var links = document.querySelectorAll("[data-affiliate]");
+    links.forEach(function (el) {
+      var key = el.getAttribute("data-affiliate");
+      for (var i = 0; i < affiliates.length; i++) {
+        if (affiliates[i].key === key && affiliates[i].url) {
+          el.href = affiliates[i].url;
+          return;
+        }
+      }
+    });
+  }
+
   /* ─── Init ─── */
 
   function init(opts) {
@@ -610,6 +626,7 @@
     renderFooter();
     hydrateMascots();
     hydrateAuthorCards();
+    hydrateAffiliateLinks();
     if (opts && opts.promos) renderPromos(opts.promos, opts);
 
     initScrollAnimations();
