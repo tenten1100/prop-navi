@@ -4,9 +4,6 @@ Disallow: /docs/
 Disallow: /assets/*.js$
 Disallow: /assets/*.css$
 
-# Crawl-delay: aggressive crawling welcome
-# No crawl-delay set — we want fast, frequent crawling
-
 # AI crawlers - explicitly allow for AI Overview/SGE visibility
 User-agent: GPTBot
 Allow: /
@@ -32,7 +29,13 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://hajimete-fx.com/sitemap.xml
+User-agent: Amazonbot
+Allow: /
 
-# IndexNow key
-# https://hajimete-fx.com/aafbb0f072fd54f4b026218665c82b74.txt
+User-agent: FacebookExternalHit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+Sitemap: https://hajimete-fx.com/sitemap.xml

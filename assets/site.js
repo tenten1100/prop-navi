@@ -126,6 +126,28 @@
     }
   }
 
+  function injectSiteNavigation() {
+    var base = (SITE.baseUrl || "").replace(/\/$/, "");
+    if (!base) return;
+    var existing = document.querySelectorAll('script[type="application/ld+json"]');
+    for (var i = 0; i < existing.length; i++) {
+      if (/"SiteNavigationElement"/.test(existing[i].textContent || "")) return;
+    }
+    injectSchemaLD({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        { "@type": "SiteNavigationElement", "position": 1, "name": "FXの始め方", "url": base + "/guide/fx-hajimekata" },
+        { "@type": "SiteNavigationElement", "position": 2, "name": "口座比較ランキング", "url": base + "/guide/kouza-ranking" },
+        { "@type": "SiteNavigationElement", "position": 3, "name": "スプレッド比較", "url": base + "/guide/spread-hikaku" },
+        { "@type": "SiteNavigationElement", "position": 4, "name": "VPS・取引環境", "url": base + "/guide/vps" },
+        { "@type": "SiteNavigationElement", "position": 5, "name": "TradingView", "url": base + "/guide/tradingview" },
+        { "@type": "SiteNavigationElement", "position": 6, "name": "税金・確定申告", "url": base + "/guide/kakutei-shinkoku" },
+        { "@type": "SiteNavigationElement", "position": 7, "name": "ロット計算ツール", "url": base + "/tools/calculator" }
+      ]
+    });
+  }
+
   function injectSEOSignals() {
     var base = (SITE.baseUrl || "").replace(/\/$/, "");
     if (!base) return;
@@ -784,6 +806,7 @@
 
   function init(opts) {
     injectOrganization();
+    injectSiteNavigation();
     injectSEOSignals();
     renderDisclaimerBar();
     renderHeader();
